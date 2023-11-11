@@ -1,3 +1,5 @@
+import os
+
 print("hello world!")
 print('"hello" world!')
 print("hello\n world!")  # 줄 바꿈
@@ -28,3 +30,70 @@ str = "안녕 하세요"
 print(str.find("안녕"))  # find()문자열 위치찾기
 print("안녕" in str)  # in 문자열 존재여부
 print(str.split(" "))  # split() 문자열 자르기
+
+# 4.if
+# False: none, 0, 0.0, 빈 컨테이너
+# Ture : 1, False 외의 나머지
+number = int(number)
+if number > 0:
+    print("양수입니다.")
+elif number == 0:  # else if- 와 같은 기능
+    print("0입니다.")
+else:
+    print("음수입니다.")
+# pass 골격을 잡을 때, 후에 개발할 내용을 의미
+
+# 5. list
+list_a = [12, "문자열", 495, 34, 3456]
+list_c = [1, "문자", 45, 34, 6]
+list_b = [[1, 2, 3], [34, 56, 78], [2, 45, 67]]  # 리스트 안에 리스트 생성
+print(list_a[1])
+print(list_a[1][0])  # int 형식에선 불가능
+print(list_b[1])
+print(list_a + list_c)  # 리스트 합체
+print(list_c * 3)  # 리스트 반복
+# 리스트 요소 추가
+list_a.append(5)
+list_a.insert(2, 5)
+print(list_a)
+# 리스트 요소 제거
+del list_a[2]
+print(list_a)
+
+# 6. 반복문
+tree = 0
+while tree < 5:  # 조건문이 참이라면 반복
+    print("a")
+    tree += 1
+    if tree == 3:
+        break  # 반복문 강제 종료
+    else:
+        continue  # 반복문 처음으로 이동
+for i in list_a:  # 리스트,튜플,range
+    print(i)
+
+# 7. 모듈
+# 확장자.py는 모두 모듈이다.
+# import를 통해서 모듈,라이브러리를 불러온다.
+# from 모듈 import 함수or*(*은 함수 전체를 의미)
+print("모듈")
+import mod1
+
+print(mod1.add(1, 3))
+print(mod1.sub(6, 3))
+
+from mod1 import add  # 모듈을 붙이지 않고 함수사용이 가능
+
+print(add(2, 5))
+
+# if __name__=="__main__": ~ <모듈파일에서 사용됨>
+# 직접 파일을 실행할 경우 name=main이 되어 if문 내용이 실행됨
+# 셸 등에서 실행할 경우 if문 안의 내용은 실행되지 않음
+import mod2  # 모듈 파일에 모듈 불러오기
+
+# 다른 디렉터리 모듈 불러오기
+import sys
+
+print(sys.path)  # 파이썬 라이브러리 디렉터리 목록
+sys.path.append("C:\\Users\\user\\Desktop\\python")
+print(sys.path)  # 디렉터리 이동 없이 모듈을 불러올 수 있음
