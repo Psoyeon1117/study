@@ -1,40 +1,46 @@
 import os
 
+print("hello world!")
+print('"hello" world!')
 print("hello\n world!")  # 줄 바꿈
 print("hello\t world!")  # 탭
-print("""동해물과 백두산이 마르고 닳도록
-      하느님이 보우하사 우리나라 만세""")  # """~""" 엔터로 줄바꿈 가능함'
+print(
+    """동해물과 백두산이 마르고 닳도록
+      하느님이 보우하사 우리나라 만세"""
+)  # """~""" 엔터로 줄바꿈 가능함'
 
 # 1.string operation
 print("hello" + "world!")  # 문자열 더하기
 print("hello world!" * 3)  # 문자열 반복
 print("hello world!"[1])  # indexing
+print("hello world!"[-1])
 print("hello world!"[1:6])  # slicing
 
 # 2.input
-number = input("숫자를 입력하세요> ")  # 리턴값은 str 고정
-print(number, type(number))
+number = input("숫자를 입력하세요> ")  # 리턴값은 문자열 고정
+print(number)
+print(type(number))
 int_a = int(number)  # int()정수로 변환
 float_b = float(number)  # float()실수로 변환
-print(type(float_b), type(int_a))
+print(type(int_a))
+print(type(float_b))
 
 # 3.string
-string = "안녕 하세요"
-print(string.find("안녕"))  # find()문자열 위치찾기
-print("안녕" in string)  # in 문자열 존재여부
-print(string.split(" "))  # split() 문자열 자르기
+str = "안녕 하세요"
+print(str.find("안녕"))  # find()문자열 위치찾기
+print("안녕" in str)  # in 문자열 존재여부
+print(str.split(" "))  # split() 문자열 자르기
 
-# 4.조건문
-# if 조건: 실행-elif-else   |   switch 조건: case 1~n
+# 4.if
 # False: none, 0, 0.0, 빈 컨테이너
 # Ture : 1, False 외의 나머지
 number = int(number)
 if number > 0:
-    print("조건: 양수입니다.")
+    print("양수입니다.")
 elif number == 0:  # else if- 와 같은 기능
-    print("조건: 0입니다.")
+    print("0입니다.")
 else:
-    print("조건: 음수입니다.")
+    print("음수입니다.")
 # pass 골격을 잡을 때, 후에 개발할 내용을 의미
 
 # 5. list
@@ -119,3 +125,15 @@ import sys
 # print(sys.path)  #파이썬 라이브러리 디렉터리 목록
 sys.path.append("C:\\Users\\user\\Desktop\\python")
 # print(sys.path)  # 디렉터리 이동 없이 모듈을 불러올 수 있음
+
+# 10. 오류와 예외
+# 실행 전 오류:syntax error 구문=(정해진 문법)의 오류
+# 실행 중 오류(예외):runtime error
+# 예외 처리(rubtime error에서만 해당):if-else예외처리, try-except
+try:
+    num_in_a = int(input("정수입력> "))
+    print("입력한 정수: ", num_in_a)
+except:  # 예외가 발생했을 때 실행할 코드
+    print("무언가 잘못되었습니다.")
+finally:  # (예외, return, break) 상관없이 무조건 실행할 코드,
+    print("코드가 종료되었습니다.")
