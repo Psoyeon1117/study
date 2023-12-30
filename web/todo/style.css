@@ -24,6 +24,14 @@
 	border: none;
 	border-radius: 15px;
 }
+button{
+	cursor: pointer;
+	background: #2c3c82;
+	border: none;
+	padding: 0.3rem;
+	border-radius: 15px;
+	color: #fff;
+}
 .todo-list li{
 	border-bottom: 1px solid #eee;
 	padding: 1rem;
@@ -36,18 +44,29 @@
 .todo-item{
 	flex: 8;
 }
+.done .todo-item{
+	text-decoration: line-through;
+	color: #ccc;
+}
+.done .check{
+	visibility: hidden;
+}
 .todo-manage{
 	flex: 1;
 	display: flex;
 	justify-content: space-between;
 }
-.like{
+.favorite_border{
 	cursor: pointer;
+	color: rgb(255, 57, 57);
 	font-size: 20px !important;
 }
 .check{
 	color: rgb(105, 208, 105);
+	cursor: pointer;
+	
 }
 .clear{
 	color: salmon;
+	cursor: pointer;
 }
