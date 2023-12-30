@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.header{
+	color: #fff;
+	background: linear-gradient(25deg, #ceb6ad, #636FA4);
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	align-items: center;
+}
+.input-box > label{
+	display: none;
+}
+.input-box > input{
+	padding: 0.5rem;
+	border: none;
+	border-radius: 15px;
+}
+.todo-list li{
+	border-bottom: 1px solid #eee;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+}
+.todo-like{
+	flex: 1;
+}
+.todo-item{
+	flex: 8;
+}
+.todo-manage{
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+}
+.like{
+	cursor: pointer;
+	font-size: 20px !important;
+}
+.check{
+	color: rgb(105, 208, 105);
+}
+.clear{
+	color: salmon;
+}
