@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>todo</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>TODO</h1>
+			<div class="input-box">
+				<label for="todo-input">TODO : </label>
+				<input type="text" id="todo-input">
+			</div>
+		</header>
+		<section class="section">
+			<ul class="todo-list">
+				<li>
+					<span class="todo-like">
+						<i class="material-icons favorite_border">favorite_border</i>
+					</span>
+					<span class="todo-item">할 일</span>
+					<span class="todo-manage">
+						<i class="material-icons check">check</i>
+						<i class="material-icons clear">clear</i>
+					</span>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<script src="js/todo.js"></script>
+</body>
+</html>
