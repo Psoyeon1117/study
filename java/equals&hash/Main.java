@@ -1,5 +1,6 @@
 package firstProject;
 
+import java.util.*;
 
 public class Main {
 	public static void main(String[] args)
@@ -30,5 +31,18 @@ public class Main {
 	System.out.println("alice3.hashCode(): " + alice3.hashCode()); //name,salary,hireday로 해쉬코드를 만듦
 	System.out.println("bob.hashCode(): " + bob.hashCode());
 	System.out.println("carl.hashCode(): " + carl.hashCode());
+	
+	
+	System.out.println("----------------------------");
+	//-------------------------------------------------//
+	ArrayList<Employee> staff = new ArrayList<>(); // fill the staff array list
+	staff.add(new Employee("Carl Cracker", 75000, 1987, 12, 15));
+	staff.add(new Employee("Harry Hacker", 50000, 1989, 10, 1));
+	staff.add(new Employee("Tony Tester", 40000, 1990, 3, 15));
+	for (Employee e : staff)
+	e.raiseSalary(5); // raise everyone's salary by 5%
+	for (Employee e : staff) // printout all information about all Employee objects
+	System.out.println("name=" + e.getName() + ",salary=" + e.getSalary()
+	+ ",hireDay="+ e.getHireDay());
 	} // end of main()
 }
