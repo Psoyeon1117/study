@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int main(void) {
+	//1172_codeup
 	//버블 정렬
 	int ary[30];
 	int n;
