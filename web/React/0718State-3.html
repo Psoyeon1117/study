@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    const Container = () => {
+      const [amount, setAmount] = React.useState(0);  //시간 state
+      const [flip, setFlip] = React.useState(false);  //단위 변경 state
+      const onchange = (event) => {
+        setAmount(event.target.value);
+      };
+      const reset = () => setAmount(0);
+      const flipped = () => {setFlip((current)=>!current)
+        reset();
+      }
+      return (
+        <div>
+          <h1>Super Convert</h1>
+          <div>
+            <label htmlFor="minutes">Minutes</label>
+            <input
+              //value는 외부에서 input의 value를 변경하기 위해서 설정함
+              value={flip ? amount*60 : amount} 
+              id="minutes"
+              type="number"
+              placeholder="Minutes"
+              onChange={onchange}
+              disabled={flip}
+              />
+              </div>
+              <div>
+                <label htmlFor="hours">Hours</label>
+                <input
+                value={flip ? amount : Math.round(amount/60)}
+                id="hours"
+                type="number"
+                placeholder="Hours"
+                onChange={onchange}
+                disabled={!flip}
+            />
+          </div>
+          <button id="reset" onClick={reset}>reset</button>
+          <button id="flip" onClick={flipped}>flip</button>
+        </div>
+      );
+    };
+    ReactDOM.render(<Container />, root);
+  </script>
+</html>

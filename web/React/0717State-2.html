@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    const Container = () => {
+      const [counter, setCounter] = React.useState(0);  
+      //usestate로 만든 배열을 한 번에 저장한다
+      //counter = state[0]= data, setCounter= state[1]= data를 지정하는 함수
+      console.log("1render"); //리렌더링 범위 확인용
+
+      const click = () => {
+        // setCounter(counter + 1); //직접 입력
+        setCounter((current)=>current+1); //함수를 이용, 더욱 안전함
+
+        // setCounter함수의 내용
+        // counter = counter + 1;
+        // ReactDOM.render(<Container />,root);
+        //+render할 때, Container에서 변경되는 요소만을 판단해서 render한다.
+      };
+      console.log("2render"); //리렌더링 범위 확인용
+      return (
+        <div>
+          <h3>Total click: {counter}</h3>
+          <button onClick={click}>click me</button>
+        </div>
+      );
+    };
+    ReactDOM.render(<Container />, root);
+  </script>
+</html>
