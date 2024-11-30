@@ -1,0 +1,13 @@
+//- 모든 페이지들의 틀이 될 코드
+doctype html
+html(lang="ko")
+	head
+		title Home 
+	body 
+		block content 
+			h1 Hello
+		//- child template이 원하는 내용으로 대체할 수 있는 block
+		include footer.pug
+		//- 한 pug파일의 요소들을 다른 곳에 넣을 수 있도록 해준다.
+		//- footer.pug가 변경되면 include한 다른 파일들도 footer부분이 변경된다.
+		

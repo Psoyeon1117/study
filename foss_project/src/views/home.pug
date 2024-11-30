@@ -1,0 +1,16 @@
+extends base.pug
+//- extends로 base를 상속받을 수 있다.
+
+block append content 
+	//- home이 원하는 내용을 block에 추가하였다.
+	h1 Home 
+	ul 
+		li 
+			a(href="/country") Country
+		each e in ["animal", "color", "city"]
+			//-	반복하는 작업을 쉽게 할 수 있도록 도와준다.
+			//- in 뒤에는 무조건 배열이 와야한다.
+			li #{e} 
+			//- #{}은 pug에서 JS 표현을 사용할 수 있게 해준다.
+		else	//배열이 비어있을 경우
+			li no element

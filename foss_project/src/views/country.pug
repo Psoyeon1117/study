@@ -1,0 +1,17 @@
+extends base.pug
+
+
+block content 
+	//- country가 원하는 내용으로 block을 교체하였다.
+	a(href="/") Home
+	h1 country list
+	each country in countryList
+		+coutries(country)
+
+	
+mixin coutries(country)
+	//- 외부에서 데이터를 받을 수 있는 block. 
+	ul 
+	li Name: #{country.name}
+	li Capital: #{country.capital}
+	li languages: #{country.languages}
